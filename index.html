@@ -1,0 +1,57 @@
+<title>暮鐘戰記</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Noto+Sans+TC:wght@500;700;900&family=Noto+Serif+TC:wght@700;900&display=swap">
+<link rel="stylesheet" href="style.css">
+
+<div id="game">
+  <canvas id="gl"></canvas>
+  <div id="ov"></div>
+  <div id="redV"></div>
+  <div id="hud" hidden>
+    <div id="me"><canvas id="meP" width="108" height="108"></canvas><div id="meB"><div id="meN">伊芙<span>LV1</span></div><div class="bar" id="hpB"><i></i><s></s></div><div class="bar" id="xpB"><i></i></div></div></div>
+    <div id="res"><div class="chip"><i class="coin"></i><span id="gold">0</span></div><button class="rb" id="muteBtn" aria-label="音效">♪</button></div>
+    <div id="mats"><span><img id="imW" alt="木材"><b id="mW">0</b></span><span><img id="imS" alt="石材"><b id="mS">0</b></span><span><img id="imI" alt="鐵礦"><b id="mI">0</b></span></div>
+    <div id="menu"><button class="mb" id="mapBtn" aria-label="王國地圖"><img id="icMap" alt=""><span>地圖</span></button><button class="mb" id="bagBtn" aria-label="背包與裝備"><img id="icBag" alt=""><span>背包</span><i class="dot"></i></button><button class="mb" id="treeBtn" aria-label="技藝"><img id="icTree" alt=""><span>技藝</span><i class="dot"></i></button><button class="mb" id="chrBtn" aria-label="戰記"><img id="icBook" alt=""><span>戰記</span><i class="dot"></i></button><button class="mb" id="homeBtn" aria-label="回城"><img id="icHome" alt=""><span>回城</span></button></div>
+    <div id="quest" hidden></div>
+    <canvas id="mm" width="224" height="224" hidden aria-label="小地圖（點一下放大）"></canvas>
+    <div id="bossBar" hidden><div class="nm" id="bossN"></div><div class="bb"><u></u><i></i><s></s></div></div>
+    <div id="joy"><div id="knob"></div></div>
+    <div id="joyHint" hidden><i></i>按住左半邊拖曳移動</div>
+    <div id="skills">
+      <div class="sk big" id="sk0" role="button" tabindex="0" aria-label="翻滾"><span>閃</span><div class="cd"></div><div class="ct"></div><small>翻滾</small></div>
+      <div class="sk s1" id="sk1" role="button" tabindex="0"><span></span><div class="cd"></div><div class="ct"></div><small></small></div>
+      <div class="sk s2" id="sk2" role="button" tabindex="0"><span></span><div class="cd"></div><div class="ct"></div><small></small></div>
+      <div class="sk s3" id="sk3" role="button" tabindex="0"><span></span><div class="cd"></div><div class="ct"></div><small></small></div>
+      <div class="sk pot" id="skP" role="button" tabindex="0" aria-label="回復藥"><span></span><div class="ct" id="potN"></div></div>
+      <div class="sk ult" id="sk4" role="button" tabindex="0" aria-label="奧義" hidden><span></span><div class="cd"></div><div class="ct"></div><small>奧義</small></div>
+      <div class="sk tac" id="skT" role="button" tabindex="0" aria-label="戰術道具"><div class="ct" id="tacN"></div></div>
+    </div>
+    <div id="act" hidden><button class="btn" id="actB">查看</button></div>
+    <div id="loot"></div>
+  </div>
+  <div id="title">
+    <div><div class="lg">暮鐘戰記</div><div class="en">BELLKEEP WAR CHRONICLES</div></div>
+    <div class="mn"><button class="btn" id="newB">開始冒險</button><button class="btn dk" id="contB" hidden>繼續冒險</button></div>
+  </div>
+  <div id="sel" hidden>
+    <div id="selT">選擇你的英雄</div>
+    <div id="selL"></div>
+    <div id="selR"></div>
+    <div id="selB"><button class="btn" id="selGo">就是你了</button></div>
+  </div>
+  <div id="panel" hidden></div>
+  <div id="dlg" hidden><canvas id="pL" width="400" height="476"></canvas><canvas id="pR" width="400" height="476"></canvas><div class="box" id="dB"><div class="who" id="dW"></div><div class="tx" id="dT"></div></div><button class="btn dk skip" id="dS">略過</button></div>
+  <div id="toast" hidden></div>
+  <div id="fade"></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="js/01-core.js"></script>
+<script src="js/02-art.js"></script>
+<script src="js/03-world.js"></script>
+<script src="js/04-combat.js"></script>
+<script src="js/05-ui.js"></script>
+<script src="js/06-map.js"></script>
+<script src="js/07-part2-story.js"></script>
+<script src="js/08-features.js"></script>
+<script src="js/09-main.js"></script>
